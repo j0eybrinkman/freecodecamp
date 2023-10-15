@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+figure {
+    margin: 0 auto;
+}
+
+#image {
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+main {
+    padding-top: 20px;
+}
+
+main > * {
+    padding-bottom: 20px;
+}
