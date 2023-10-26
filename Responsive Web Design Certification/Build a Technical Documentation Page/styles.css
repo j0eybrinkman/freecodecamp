@@ -1,0 +1,79 @@
+/* CSS Variables */
+:root {
+    --border-primary: #cdcdcd;
+}
+
+/* Normalize Styles */
+* {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    line-height: 1.5;
+}
+
+body,
+header * {
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+
+/* hide semantic tags that have duplicate info */
+header h1,
+header h2,
+header h3 {
+    display: none;
+}
+
+
+
+
+/* heading styles */
+.page-title,
+.sub-title {
+    font-weight: bold;
+}
+
+.page-title {
+    font-size: 2em;
+}
+
+.sub-title {
+    font-size: 1.5em;
+}
+
+.indent {
+    padding-left: .5rem;
+}
+
+.code {
+    background-color: lightgray;
+}
+
+.code-example {
+    border: 3px solid var(--grey);
+}
+
+/* table styles */
+
+table {
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 1px solid var(--border-primary);
+    padding: .5rem .75rem;
+    vertical-align: middle;
+}
+
+table th {
+    font-weight: bold;
+}

@@ -8,31 +8,155 @@
 </head>
 <body>
 	<nav id="navbar">
-		<header></header>
+		<header class="page-title">CSS Layout
+			<h1>CSS Layout</h1>
+		</header>
 		<ul>
-			<li><a class="nav-link" href=""></a></li>
-			<li><a class="nav-link"  href=""></a></li>
-			<li><a class="nav-link"  href=""></a></li>
-			<li><a class="nav-link"  href=""></a></li>
-			<li><a class="nav-link"  href=""></a></li>
+			<li><a class="nav-link" href="#Introduction_to_CSS_layout">Introduction to CSS layout</a></li>
+			<li><a class="nav-link"  href="#Normal_Flow">Normal Flow</a></li>
+			<li><a class="nav-link"  href="#Flexbox">Flexbox</a></li>
+			<li><a class="nav-link"  href="#Grids">Grids</a></li>
+			<li><a class="nav-link"  href="#Floats">Floats</a></li>
+			<li><a class="nav-link"  href="#Positioning">Positioning</a></li>
+			<li><a class="nav-link"  href="#Multiple-column_layout">Multiple-column layout</a></li>
+			<li><a class="nav-link"  href="#Responsive_Design">Responsive Design</a></li>
+			<li><a class="nav-link"  href="#Beginner's_guide_to_media_queries">Beginner's guide to media queries</a></li>
+			<li><a class="nav-link"  href="#Legacy_layout_methods">Legacy layout methods</a></li>
+			<li><a class="nav-link"  href="#Supporting_older_browsers">Supporting older browsers</a></li>
 		</ul>
 	</nav>
-	</div>
 	<main id="main-doc">
-		<section class="main-section">
-			<header></header>
+		<section id="Introduction_to_CSS_layout" class="main-section">
+			<header class="sub-title">Introduction to CSS layout
+				<h2>Introduction to CSS layout</h2>
+				<p>This article will recap some of the CSS layout features we've already touched upon in previous modules, such as different <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">display</a> values, as well as introduce some of the concepts we'll be covering throughout this module.</p>
+				<table>
+					<tbody>
+						<tr>
+							<th scope="row">Prerequisites:</th>
+							<td>The basics of HTML (study <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML" target="_blank">Introduction to HTML</a>), and an idea of How CSS works (study <a href="" target="_blank">Introduction to CSS</a>.)</td>
+						</tr>
+						<tr>
+							<th scope="row">Objective:</th>
+							<td>To give you an overview of CSS page layout techniques. Each technique can be learned in greater detail in subsequent tutorials.</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>CSS page layout techniques allow us to take elements contained in a web page and control where they're positioned relative to the following factors: their default position in normal layout flow, the other elements around them, their parent container, and the main viewport/window. The page layout techniques we'll be covering in more detail in this module are:</p>
+				<ul>
+					<li>Normal flow</li>
+					<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">display</a> property</li>
+					<li>Flexbox</li>
+					<li>Grid</li>
+					<li>Floats</li>
+					<li>Positioning</li>
+					<li>Table layout</li>
+					<li>Multiple-column layout</li>
+				</ul>
+				<p>Each technique has its uses, advantages, and disadvantages. No technique is designed to be used in isolation. By understanding what each layout method is designed for you'll be in a good position to understand which method is most appropriate for each task.</p>
+			</header>
+			<article>
+				<h3>Normal flow</h3>
+				<p>Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout. Let's look at a quick HTML example:</p>
+				<div class="code">
+					<h4>HTML</h4>
+					<code>
+						<span>&lt;p&gt;I love my cat.&lt;/p&gt;</span>
+						<br>
+						<br>
+						<span>&lt;ul&gt;</span>
+						<br>
+						<span class="indent">&lt;li&gt;Buy cat food&lt;/li&gt;</span>
+						<br>
+						<span class="indent">&lt;li&gt;Exercise&lt;/li&gt;</span>
+						<br>
+						<span class="indent">&lt;li&gt;Cheer up friend&lt;/li&gt;</span>
+						<br>
+						<span>&lt;/ul&gt;</span>
+						<br>
+						<br>
+						<span>&lt;p&gt;The end!&lt;p&gt;</span>
+						<br>
+					</code>
+				</div>
+				<p>By default, the browser will display this code as follows:</p>
+				<div class="code-example">
+					<p>I love my cat</p>
+					<ul>
+						<li>Buy cat food</li>
+						<li>Exercise</li>
+						<li>Cheer up friend</li>
+					</ul>
+					<p>The end!</p>
+				</div>
+				<p>Note how the HTML is displayed in the exact order in which it appears in the source code, with elements stacked on top of one another — the first paragraph, followed by the unordered list, followed by the second paragraph.</p>
+				<p>The elements that appear one below the other are described as block elements, in contrast to inline elements, which appear beside one another like the individual words in a paragraph.</p>
+				<div class="note">
+					<p><span>Note:</span>The direction in which block element contents are laid out is described as the Block Direction. The Block Direction runs vertically in a language such as English, which has a horizontal writing mode. It would run horizontally in any language with a Vertical Writing Mode, such as Japanese. The corresponding Inline Direction is the direction in which inline contents (such as a sentence) would run.</p>
+				</div>
+				<p>For many of the elements on your page, the normal flow will create exactly the layout you need. However, for more complex layouts you will need to alter this default behavior using some of the tools available to you in CSS. Starting with a well-structured HTML document is very important because you can then work with the way things are laid out by default rather than fighting against it.</p>
+				<p>The methods that can change how elements are laid out in CSS are:</p>
+				<ul>
+					<li><span class="bold">The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">display</a></code> property<span class="dash"> — </span></span>Standard values such as <code>block</code>, <code>inline</code> or <code>inline-block</code> can change how elements behave in normal flow, for example, by making a block-level element behave like an inline-level element (see <a href="" target="_blank">Types of CSS boxes</a> for more information). We also have entire layout methods that are enabled via specific <code>display</code> values, for example, <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids" target="_blank">CSS Grid</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank">Flexbox</a>, which alter how child elements are laid out inside their parents.</li>
+					<li><span class="bold">Floats<span class="dash"> — </span></span>Applying a <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank">float</a></code> value such as <code>left</code> can cause block-level elements to wrap along one side of an element, like the way images sometimes have text floating around them in magazine layouts.</li>
+					<li><span class="bold">The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">position</a> property</code></span><span class="dash"> — </span>Allows you to precisely control the placement of boxes inside other boxes. <code>static</code> positioning is the default in normal flow, but you can cause elements to be laid out differently using other values, for example, as fixed to the top of the browser viewport.</li>
+					<li><span class="bold">Table layout</span><span class="dash"> — </span>Features designed for styling parts of an HTML table can be used on non-table elements using <code>display: table</code> and associated properties.</li>
+					<li><span class="bold">Multi-column layout</span><span class="dash"> — </span>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_multicol_layout" target="_blank">Multi-column layout</a> properties can cause the content of a block to layout in columns, as you might see in a newspaper.</li>
+				</ul>
+			</article>
+			<article>
+				<h3>The display property</h3>
+			</article>
 		</section>
-		<section class="main-section">
-			<header></header>
+		<section id="Normal_Flow" class="main-section">
+			<header class="sub-title">Normal Flow
+				<h2>Normal Flow</h2>
+			</header>
 		</section>
-		<section class="main-section">
-			<header></header>
+		<section id="Flexbox" class="main-section">
+			<header class="sub-title">Flexbox
+				<h2>Flexbox</h2>
+			</header>
 		</section>
-		<section class="main-section">
-			<header></header>
+		<section id="Grids" class="main-section">
+			<header class="sub-title">Grids
+				<h2>Grids</h2>
+			</header>
 		</section>
-		<section class="main-section">
-			<header></header>
+		<section id="Floats" class="main-section">
+			<header class="sub-title">Floats
+				<h2>Floats</h2>
+			</header>
+		</section>
+		<section id="Positioning" class="main-section">
+			<header class="sub-title">Positioning
+				<h2>Positioning</h2>
+			</header>
+		</section>
+		<section id="Multiple-column_layout" class="main-section">
+			<header class="sub-title">Multiple-column layout
+				<h2>Multiple-column layout</h2>
+			</header>
+		</section>
+		<section id="Responsive_Design" class="main-section">
+			<header class="sub-title">Responsive Design
+				<h2>Responsive Design</h2>
+			</header>
+		</section>
+		<section id="Beginner's_guide_to_media_queries" class="main-section">
+			<header class="sub-title">Beginner's guide to media queries
+				<h2>Beginner's guide to media queries</h2>
+			</header>
+		</section>
+		<section id="Legacy_layout_methods" class="main-section">
+			<header class="sub-title">Beginner's guide to media queries
+				<h2>Beginner's guide to media queries</h2>
+			</header>
+		</section>
+		<section id="Supporting_older_browsers" class="main-section">
+			<header class="sub-title">Supporting older browsers
+				<h2>Supporting older browsers</h2>
+			</header>
 		</section>
 	</main>
 </body>
