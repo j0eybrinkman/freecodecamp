@@ -26,12 +26,16 @@ header * {
 
 
 /* hide semantic tags that have duplicate info */
-header h1,
+/* header h1,
 header h2,
 header h3 {
     display: none;
-}
+} */
 
+
+header:first-child {
+    color: red;
+}
 
 
 
