@@ -6,8 +6,6 @@
 /* Normalize Styles */
 * {
     box-sizing: border-box;
-    border: 0;
-    margin: 0;
 }
 
 html {
@@ -16,6 +14,7 @@ html {
 
 body {
     line-height: 1.5;
+    background-color: lightcyan;
 }
 
 body,
@@ -26,22 +25,13 @@ header * {
 
 
 /* hide semantic tags that have duplicate info */
-/* header h1,
-header h2,
-header h3 {
+h1,
+h2 {
     display: none;
-} */
-
-
-header:first-child {
-    color: red;
 }
 
-
-
 /* heading styles */
-.page-title,
-.sub-title {
+header {
     font-weight: bold;
 }
 
@@ -59,6 +49,8 @@ header:first-child {
 
 .code {
     background-color: lightgray;
+    width: fit-content;
+    padding: 0 5% 5% 5%;
 }
 
 .code-example {
@@ -66,7 +58,6 @@ header:first-child {
 }
 
 /* table styles */
-
 table {
     border-collapse: collapse;
 }
