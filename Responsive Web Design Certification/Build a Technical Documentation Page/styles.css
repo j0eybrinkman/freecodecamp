@@ -1,5 +1,6 @@
 /* CSS Variables */
 :root {
+    --page-background: #e0c68b;
     --border-primary: #cdcdcd;
 }
 
@@ -14,13 +15,30 @@ html {
 
 body {
     line-height: 1.5;
-    background-color: lightcyan;
+    /* background-color: var(--page-background); */
 }
 
 body,
 header * {
     font-size: 1.8rem;
     font-weight: normal;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    font-size: 110%;
+    transition: all 1s ease-in-out;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    list-style: none;
 }
 
 
@@ -44,7 +62,11 @@ header {
 }
 
 .indent {
-    padding-left: .5rem;
+    padding-left: 1rem;
+}
+
+.indent-tab {
+    padding-left: 2rem;
 }
 
 .code {
@@ -71,4 +93,11 @@ table th {
 
 table th {
     font-weight: bold;
+}
+
+.h1 {
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    margin: 24.12px 0;
 }
